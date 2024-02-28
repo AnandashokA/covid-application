@@ -1,0 +1,76 @@
+<form [formGroup]="registerForm" (ngSubmit)="registerUser()" class="border p-3 rounded-3" [ngClass]="{'clicked-background': backgroundChanged}">
+  <div class="row g-0">
+    <div class="col text-center p-2 mb-3 bg-light">
+      <span class="fs-3">Register</span>
+    </div>
+  </div>
+  <!-- firstname -->
+  <div class="row">
+    <div class="col md-3">
+      <label for="firstname" class="form-label"> Name</label>
+      <input type="text" class="form-control" id="firstname" formControlName="FirstName" [(ngModel)]="name" name="name" (focus)="changeBackground()">
+      <!-- <input type="text" class="form-control" id="firstname" formControlName="FirstName" (focus)="focusInput()"> -->
+      <div class="form-text " *ngIf="FirstName.errors?.['required'] && (FirstName.touched || FirstName.dirty)" >
+        First name is required!!
+      </div>
+      <div class="form-text " *ngIf="FirstName.errors?.['minlength'] && (FirstName.touched || FirstName.dirty)" >
+        First name is too short.
+      </div>
+      <div class="form-text " *ngIf="FirstName.errors?.['pattern'] && (FirstName.touched || FirstName.dirty)" >
+        First Name must not contain Special chars and space or numbers
+      </div>
+
+    </div>
+  </div>
+    <!-- lastname -->
+  <!-- <div class="row">
+    <div class="col md-3">
+      <label for="lastname" class="form-label">Last Name</label>
+      <input type="text" class="form-control" id="lastname" formControlName="LastName">
+      <div class="form-text"></div>
+      <div class="form-text text-danger" *ngIf="LastName.errors?.['required'] && (LastName.touched || LastName.dirty)" >
+        Last name is required!!
+      </div>
+      <div class="form-text text-danger" *ngIf="LastName.errors?.['pattern'] && (LastName.touched || LastName.dirty)" >
+        Last Name must not contain Special chars and space or numbers
+      </div>
+    </div>
+  </div> -->
+
+  <div class="row">
+    <div class="col md-3">
+      <label for="email" class="form-label">E-mail Address</label>
+      <input type="text" class="form-control" [(ngModel)]="email" name="email" id="email" formControlName="Email">
+      <div class="form-text text-danger" *ngIf="(Email.errors?.['required'] || Email.errors?.['email']) &&(Email.touched || Email.dirty)"> Enter Valid Email</div>
+
+    </div>
+  </div>
+
+  <!-- <div class="row">
+    <div class="col md-3">
+      <label for="mobile" class="form-label">Mobile Number</label>
+      <input type="text" class="form-control" id="mobile" formControlName="Number">
+      <div class="form-text text-danger" *ngIf="(Number.errors?.['required'] || Number.errors?.['pattern']) && (Number.touched||Number.dirty)">Enter The  valid Mobile Number</div>
+
+    </div>
+  </div> -->
+
+  <div class="row">
+    <div class="col md-3">
+      <label for="psw" class="form-label">Password</label>
+      <input type="password" class="form-control" [(ngModel)]="password" name="password" id="pwd" formControlName="pwd">
+      <div class="form-text"></div>
+    </div>
+    <!-- <div class="col md-3">
+      <label for="rpsw" class="form-label">Repeat Password</label>
+      <input type="password" class="form-control" id="rpwd" formControlName="rpwd">
+      <div class="form-text"></div>
+    </div> -->
+  </div>
+  <div class="btn">
+    <button type="button" routerLink="/login">
+      submit
+    </button>
+  </div>
+
+</form>

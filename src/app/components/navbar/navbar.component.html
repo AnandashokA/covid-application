@@ -1,0 +1,18 @@
+<form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+  <label for="name">Name:</label>
+  <input type="text" id="name" formControlName="name"><br><br>
+
+  <label for="locality">Your Locality:</label>
+  <input type="text" id="locality" formControlName="locality"><br><br>
+
+  <label for="email">Email:</label>
+  <input type="text" id="email" formControlName="email"><br><br>
+
+  <label for="phone">Phone:</label>
+  <input type="text" id="phone" formControlName="phone"><br><br>
+
+  <label for="slot_timing">Slot Timing:</label>
+  <input type="date" id="slot_timing" formControlName="slot_timing"><br><br>
+
+  <button type="submit">Submit</button>
+</form>

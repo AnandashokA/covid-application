@@ -1,0 +1,40 @@
+/* Apply styles to the form container */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Apply styles to form labels */
+label {
+  font-weight: bold;
+}
+
+/* Apply styles to form inputs */
+input[type="text"],
+input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Ensure padding and border do not increase width */
+}
+
+/* Apply styles to the submit button */
+button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Style the submit button on hover */
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,25 @@
+
+<!-- employee-list.component.html -->
+
+<table class="table">
+  <thead>
+    <tr>
+      <!-- <th scope="col">#</th> -->
+      <th scope="col">Center ID</th>
+      <th scope="col">Center Locality</th>
+      <th scope="col">Booth No</th>
+      <th scope="col">Slots</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of centers">
+      <!-- <th scope="row">{{ employee.sno }}</th> -->
+      <td>{{ employee.centerID }}</td>
+      <td>{{ employee.centerLocality }}</td>
+      <td>{{ employee.boothno }}</td>
+      <td>{{ employee.slots }}</td>
+      <!--  -->
+      <td><button class="btn btn-primary" routerLink="/nav">bookslot</button></td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,15 @@
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="styled-form">
+  <label for="centerID">Center ID:</label>
+  <input type="number" formControlName="centerID">
+
+  <label for="centerLocality">Center Locality:</label>
+  <input type="text" formControlName="centerLocality">
+
+  <label for="boothno">Booth Number:</label>
+  <input type="number" formControlName="boothno">
+
+  <label for="slots">Slots:</label>
+  <input type="number" formControlName="slots">
+
+  <button type="submit" >Submit</button>
+</form>

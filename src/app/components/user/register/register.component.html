@@ -1,0 +1,129 @@
+<!-- <div class="container">
+  <h2>User Registration</h2>
+  <form [formGroup]="registerForm" (submit)="submitRegistrationForm()"> -->
+    <!-- Name -->
+    <!-- <div class="form-group">
+      <label for="fullName" class="form-label">Full Name:</label>
+      <input type="text" id="fullName" name="fullName" required formControlName="FirstName" required
+      type="text"
+      pattern="^[a-z]+$"
+      maxlength="20">
+        <span class="text-danger" *ngIf="registerForm.controls['FirstName']?.invalid  && registerForm.controls['FirstName']!.dirty">
+          <div class="" *ngIf="registerForm.controls['FirstName']!.hasError('required')">
+            Name is Required😜
+          </div>
+          <div *ngIf="registerForm.controls['FirstName']!.hasError('minlength')">
+            Name should be atleast 3 charecters😉
+          </div>
+          <div *ngIf="registerForm.controls['FirstName']!.hasError('maxlength')">
+            Name should not exceed 20 charecters
+          </div>
+          <div *ngIf="registerForm.controls['FirstName']!.hasError('pattern')">
+            Name should be lowercase, without numbers, and follow the specified format.
+          </div>
+        </span>
+    </div> -->
+
+    <!-- Email Address -->
+    <!-- <div class="form-group">
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required formControlName="Email">
+      <div class="text-danger" *ngIf="Email.errors?.['required'] && (Email!.touched || Email!.dirty)">
+        email is required
+      </div>
+    </div> -->
+
+    <!-- Password -->
+    <!-- <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required formControlName="Password">
+      <span class="text-danger" *ngIf="registerForm.controls['Password']?.invalid  && (registerForm.controls['Password']!.dirty || registerForm.controls['Password']!.touched)">
+        Password is required
+      </span>
+    </div> -->
+
+    <!-- Confirm Password -->
+    <!-- <div class="form-group">
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required formControlName="ConfirmPassword">
+
+    </div> -->
+
+
+
+    <!-- Terms and Conditions -->
+    <!-- <div class="form-group">
+      <input type="checkbox" id="terms" name="terms" required>
+      <label for="terms">I agree to the terms and conditions</label>
+    </div> -->
+
+    <!-- Submit Button -->
+    <!-- <div class="form-group">
+      <button type="submit">Register</button>
+    </div>
+  </form>
+</div> -->
+
+
+
+<div class="container">
+  <h2>User Registration</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="submitRegistrationForm()">
+    <!-- Name -->
+    <div class="form-group">
+      <label for="fullName" class="form-label">Full Name:</label>
+      <input type="text" id="fullName" name="fullName" required formControlName="FirstName">
+      <div class="text-danger" *ngIf="registerForm.get('FirstName')!.hasError('required') && registerForm.get('FirstName')!.dirty">
+        Name is Required😜
+      </div>
+      <div class="text-danger" *ngIf="registerForm.get('FirstName')!.hasError('minlength')">
+        Name should be at least 3 characters😉
+      </div>
+      <div class="text-danger" *ngIf="registerForm.get('FirstName')!.hasError('maxlength')">
+        Name should not exceed 20 characters
+      </div>
+      <div class="text-danger" *ngIf="registerForm.get('FirstName')!.hasError('pattern')">
+        Name should be lowercase, without numbers, and follow the specified format.
+      </div>
+    </div>
+
+    <!-- Email Address -->
+    <div class="form-group">
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required formControlName="Email">
+      <div class="text-danger" *ngIf="registerForm.get('Email')!.hasError('required') && (registerForm.get('Email')!.touched || registerForm.get('Email')!.dirty)">
+        Email is required
+      </div>
+    </div>
+
+    <!-- Password -->
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required formControlName="Password">
+      <span class="text-danger" *ngIf="registerForm.get('Password')!.hasError('required') && (registerForm.get('Password')!.dirty || registerForm.get('Password')!.touched)">
+        Password is required
+      </span>
+    </div>
+
+    <!-- Confirm Password -->
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required formControlName="ConfirmPassword">
+
+    </div>
+
+    <!-- Terms and Conditions -->
+    <div class="form-group">
+      <input type="checkbox" id="terms" name="terms" formControlName="terms">
+      <label for="terms">I agree to the terms and conditions</label>
+      <div class="text-danger" *ngIf="registerForm.get('terms')!.hasError('requiredTrue') && registerForm.get('terms')!.dirty">
+        You must agree to the terms and conditions
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-group">
+      <button type="submit">Register</button>
+    </div>
+  </form>
+</div>

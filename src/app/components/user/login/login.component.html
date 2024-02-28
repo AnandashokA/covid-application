@@ -1,0 +1,41 @@
+<div class="container">
+  <h2>User Login</h2>
+  <form >
+    <!-- Name -->
+    <!-- <div class="form-group">
+    </div> -->
+
+    <label for="fullName" class="form-label">Name:</label>
+    <input type="text" id="fullName" name="fullName" required formControlName="Name" >
+    <!-- <div class="text-danger" *ngIf="name.errors?.['required'] && (name.touched || name.dirty)">
+      Name is required
+    </div> -->
+    <!-- Email Address -->
+    <!-- <div class="form-group">
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required formControlName="Email" [(ngModel)]="loginObj.email">
+      <div class="text-danger" *ngIf="Email.errors?.['required'] && (Email.touched || Email.dirty)">
+        Email is required
+      </div>
+    </div> -->
+
+    <!-- Password -->
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required formControlName="Password" >
+      <!-- <div class="text-danger" *ngIf="Password.errors?.['required'] && (Password.touched || Password.dirty)">
+        Password is required
+      </div> -->
+    </div>
+
+    <!-- Register Link -->
+    <div class="form-group">
+      <p>Don't have an account? <a routerLink="/register">Register here</a></p>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-group">
+      <button type="button" routerLink="/show" class="btn"  >Login</button>
+    </div>
+  </form>
+</div>
